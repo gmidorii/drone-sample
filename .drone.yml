@@ -1,0 +1,10 @@
+
+pipeline:
+  build:
+    image: golang:1.10.2
+    commands:
+      # dep install
+      - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+      - dep ensure
+      - go build
+      - go test
